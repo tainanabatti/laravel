@@ -8,7 +8,7 @@ html, body {
 }
 
 #fundo {
-    background-image: url('../img/fundo.gif');
+    background-image: url('../img/LARAVEL.jpg');
     background-attachment: fixed;
     background-size: cover;
 }
@@ -44,6 +44,16 @@ html, body {
     color: #fff;
     font-size: 64px;
     line-height: 1;
+}
+
+.lins{
+    color: #fff;
+    padding: 0 13px;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .links > a {

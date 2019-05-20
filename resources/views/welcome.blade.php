@@ -35,23 +35,19 @@
         </div>
     @endif
     <div class="content">
-        <i class="fa fa-bank"></i>
-        <div class="title m-b-md">
-            Comercial Laravel
-        </div>
+
+        <h1 class="lins">
+            <a href="{{ url('/product') }}"> Produtos</a>
+        </h1>
         <div class="links">
-            <a href="">
-                <i class="fa fa-file-text"> Documentação</i>
-            </a>
+
             <a href="">
                 <i class="fa fa-youtube-play"> Youtube</i>
             </a>
             <a href="">
                 <i class="fa fa-github"> GitLab</i>
             </a>
-            <a href="">
-                <i class="fa fa-info"> Sobre</i>
-            </a>
+
         </div>
     </div>
 </div>
