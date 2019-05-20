@@ -39,13 +39,16 @@
         <h1 class="lins">
             <a href="{{ url('/product') }}"> Produtos</a>
         </h1>
+        <h1 class="lins">
+            <a href="{{ url('/cliente') }}"> Clientes</a>
+        </h1>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="links">
-
-            <a href="">
-                <i class="fa fa-youtube-play"> Youtube</i>
-            </a>
-            <a href="">
-                <i class="fa fa-github"> GitLab</i>
+            <a href="https://github.com/tainanabatti/laravel">
+                <i class="fa fa-github"> GitHub</i>
             </a>
 
         </div>

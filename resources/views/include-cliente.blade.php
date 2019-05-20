@@ -51,6 +51,7 @@
                         <ul class="dropdown-menu">                           
                             <li><a href="#">Usuários</a></li>                                               
                             <li><a href="{{route('product.index')}}">Produtos</a></li>                                               
+                            <li><a href="{{route('cliente.index')}}">Clientes</a></li>
                             <li><a href="#">Computadores</a></li>
                             <li><a href="#">Administradores</a></li>
                         </ul>
@@ -87,7 +88,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12" id="center">              
-                        <h1><b>Produto</b></h1>
+                        <h1><b>Cliente</b></h1>
                         <br>
                     </div>
                 </div>
@@ -95,62 +96,81 @@
                     <div class="col-md-12">
                         <ol class="breadcrumb">
                             <li><a href="">Panel</a></li>                  
-                            <li><a href="{{route('product.index')}}">Produtos</a></li>                  
+                            <li><a href="{{route('cliente.index')}}">Cliente</a></li>
                             <li class="active">Cadastro</li>
                         </ol>              
                     </div>          
                 </div>
                 <div class="row">  
                     <br>
-                    <h4 id="center"><b>CADASTRO DOS DADOS DO PRODUTO</b></h4>
+                    <h4 id="center"><b>CADASTRO DOS DADOS DO CLIENTE</b></h4>
                     <br> 
                     <form method="post" 
-                          action="{{route('product.store')}}" 
+                          action="{{route('cliente.store')}}"
                           enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="col-md-6">              
                             <div class="form-group">
-                                <label for="name">Nome</label>
-                                <input type="text" name="name" 
-                                       class="form-control" 
-                                       required>
+                                    <label for="nome">Nome</label>
+                                    <input type="text" name="nome"
+                                           class="form-control"
+                                           required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="foto"> Foto </label>
-                                <input type="text" name="imagem"
-                                       accept=".gif,.jpg,.png"
+                                <label for="telefone"> Telefone </label>
+                                <input type="text" name="telefone"
                                        class="form-control"
                                        data-toggle="tooltip" 
                                        data-placement="top"
-                                       title="Usar arquivo com dimensões 300x300 
-                                       - JPG, GIF, PNG">
+                                       title="Digite somente numeros">
                             </div>   
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="description">Descrição</label>
-                                <input type="text" name="description" 
+                                <label for="rua">Rua</label>
+                                <input type="text" name="rua"
                                        class="form-control" 
                                        required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="quantity">Quantidade</label>
-                                <input type="number" name="quantity" 
+                                <label for="complemento">Complemento</label>
+                                <input type="text" name="complemento"
                                        class="form-control" 
                                        required>
                             </div>    
                         </div>                 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="price"> Preço </label>
-                                <input type="text" name="price"                               
+                                <label for="bairro"> Bairro </label>
+                                <input type="text" name="bairro"
                                        class="form-control">
                             </div>
-                        </div>                       
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cep"> CEP </label>
+                                <input type="number" name="cep"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cidade"> Cidade </label>
+                                <input type="text" name="cidade"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="estado"> Estado </label>
+                                <input type="text" name="estado"
+                                       class="form-control">
+                            </div>
+                        </div>
                         <div class="col-md-12">                   
                             <button type="reset" class="btn btn-default">
                                 Limpar

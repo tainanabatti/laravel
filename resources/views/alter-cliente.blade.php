@@ -19,7 +19,7 @@
         <!-- JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="{{URL::asset('js/ajax.js')}}"></script>        
+        <script src="{{URL::asset('js/ajax.js')}}"></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">       
@@ -51,6 +51,7 @@
                         <ul class="dropdown-menu">                           
                             <li><a href="#">Usuários</a></li>                                               
                             <li><a href="{{route('product.index')}}">Produtos</a></li>                                               
+                            <li><a href="{{route('cliente.index')}}">Clientes</a></li>
                             <li><a href="#">Computadores</a></li>
                             <li><a href="#">Administradores</a></li>
                         </ul>
@@ -82,7 +83,7 @@
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                 </ul>
             </div>       
-        </nav>       
+        </nav>        
         <div id="line-one">
             <div class="container">
                 <div class="row">
@@ -95,69 +96,98 @@
                     <div class="col-md-12">
                         <ol class="breadcrumb">
                             <li><a href="">Panel</a></li>                  
-                            <li><a href="{{route('product.index')}}">Produtos</a></li>                  
-                            <li class="active">Cadastro</li>
+                            <li><a href="{{route('cliente.index')}}">Clientes</a></li>
+                            <li class="active">Alteração</li>
                         </ol>              
                     </div>          
                 </div>
                 <div class="row">  
                     <br>
-                    <h4 id="center"><b>CADASTRO DOS DADOS DO PRODUTO</b></h4>
+                    <h4 id="center"><b>ALTERAÇÃO DOS DADOS DO CLIENTE</b></h4>
                     <br> 
                     <form method="post" 
-                          action="{{route('product.store')}}" 
+                          action="{{route('cliente.update', $cliente->id)}}"
                           enctype="multipart/form-data">
+                        {!! method_field('put') !!}
                         {{ csrf_field() }}
                         <div class="col-md-6">              
                             <div class="form-group">
-                                <label for="name">Nome</label>
-                                <input type="text" name="name" 
+                                <label for="nome">Nome</label>
+                                <input type="text" name="nome"
                                        class="form-control" 
+                                       value="{{$cliente->nome or old('nome')}}"
                                        required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="foto"> Foto </label>
-                                <input type="text" name="imagem"
-                                       accept=".gif,.jpg,.png"
+                                <label for="telefone"> Telefone </label>
+                                <input type="text" name="telefone"
                                        class="form-control"
                                        data-toggle="tooltip" 
                                        data-placement="top"
-                                       title="Usar arquivo com dimensões 300x300 
-                                       - JPG, GIF, PNG">
+                                       title="Digite somente numeros"
+                                       value="{{$cliente->telefone or old('telefone')}}">
                             </div>   
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="description">Descrição</label>
-                                <input type="text" name="description" 
+                                <label for="rua">Rua</label>
+                                <input type="text" name="rua"
                                        class="form-control" 
+                                       value="{{$cliente->rua or old('rua')}}"
                                        required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="quantity">Quantidade</label>
-                                <input type="number" name="quantity" 
+                                <label for="complemento">Complemento</label>
+                                <input type="text" name="complemento"
                                        class="form-control" 
+                                       value="{{$cliente->complemento or old('complemento')}}"
                                        required>
                             </div>    
                         </div>                 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="price"> Preço </label>
-                                <input type="text" name="price"                               
-                                       class="form-control">
+                                <label for="bairro"> Bairro </label>
+                                <input type="text" name="bairro"
+                                       class="form-control"
+                                       value="{{$cliente->bairro or old('bairro')}}"
+                                       required>
                             </div>
-                        </div>                       
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cep"> CEP </label>
+                                <input type="number" name="cep"
+                                       class="form-control"
+                                       value="{{$cliente->cep or old('cep')}}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cidade"> Cidade </label>
+                                <input type="text" name="cidade"
+                                       class="form-control"
+                                       value="{{$cliente->cidade or old('cidade')}}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="estado"> Estado </label>
+                                <input type="text" name="estado"
+                                       class="form-control"
+                                       value="{{$cliente->estado or old('estado')}}">
+                            </div>
+                        </div>
                         <div class="col-md-12">                   
                             <button type="reset" class="btn btn-default">
                                 Limpar
                             </button>
                             <button type="submit" 
                                     class="btn btn-warning" id="black">
-                                Cadastrar
+                                Alterar
                             </button>
                         </div>
                     </form>             
